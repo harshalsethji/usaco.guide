@@ -1,0 +1,19 @@
+import sys
+
+sys.stdin = open("teleport.in", "r")
+sys.stdout = open("teleport.out", "w")
+
+a, b, x, y = map(int, input().split())
+
+
+direct_distance = abs(a - b)
+
+
+use_teleport_1 = abs(a - x) + abs(y - b)
+use_teleport_2 = abs(a - y) + abs(x - b)
+
+
+min_distance = min(direct_distance, use_teleport_1, use_teleport_2)
+
+
+print(min_distance)
